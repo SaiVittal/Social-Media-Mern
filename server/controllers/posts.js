@@ -1,5 +1,6 @@
 import User from "../models/User.js";
 import Post from "../models/post.js";
+// import Post from "../models/Post.js";
 
 /* CREATE */
 
@@ -22,8 +23,8 @@ export const createPost = async (req, res) => {
 
     const post = await Post.find();
     res.status(201).json(post);
-  } catch (err) {
-    res.status(409).json({ message: err.message });
+  } catch (error) {
+    res.status(409).json({ message: error.message });
   }
 };
 
